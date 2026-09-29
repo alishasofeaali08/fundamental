@@ -5,9 +5,7 @@ int main() {
 
     // Movie list
     string movies[15] = {
-        "The Matrix",
-        "Dune",
-        "The Adam Project",
+
         "Insidious",
         "The Nun",
         "A Quiet Place",
@@ -24,9 +22,6 @@ int main() {
 
     // Genres indicator for each movie
     string genres[15] = {
-        "Sci-Fi",
-        "Sci-Fi",
-        "Sci-Fi",
         "Horror",
         "Horror",
         "Horror",
@@ -42,11 +37,7 @@ int main() {
     };
 
     // Recommendation movies
-    string sciFiMovies[3] = {
-        "The Matrix",
-        "Dune",
-        "The Adam Project"
-    };
+
 
     string horrorMovies[3] = {
         "Insidious",
@@ -73,7 +64,6 @@ int main() {
     };
 
     // Genre counters
-    int sciFiCount = 0;
     int horrorCount = 0;
     int actionCount = 0;
     int romanceCount = 0;
@@ -145,10 +135,8 @@ int main() {
              << " (" << selectedGenre << ")" << endl;
 
         // Count genre
-        if (selectedGenre == "Sci-Fi") {
-            sciFiCount++;
-        }
-        else if (selectedGenre == "Horror") {
+    
+        if (selectedGenre == "Horror") {
             horrorCount++;
         }
         else if (selectedGenre == "Action") {
@@ -167,7 +155,6 @@ int main() {
     cout << "         GENRE PREFERENCES\n";
     cout << "=====================================\n";
 
-    cout << "Sci-Fi  : " << sciFiCount << endl;
     cout << "Horror  : " << horrorCount << endl;
     cout << "Action  : " << actionCount << endl;
     cout << "Romance : " << romanceCount << endl;
@@ -175,10 +162,6 @@ int main() {
 
     // Find highest genre count
     int highestCount = 0;
-
-    if (sciFiCount > highestCount) {
-        highestCount = sciFiCount;
-    }
 
     if (horrorCount > highestCount) {
         highestCount = horrorCount;
@@ -204,8 +187,7 @@ int main() {
     // Check if every selected movie belongs to a different genre
     bool allDifferent = true;
 
-    if (sciFiCount > 1 ||
-        horrorCount > 1 ||
+    if (horrorCount > 1 ||
         actionCount > 1 ||
         romanceCount > 1 ||
         mysteryCount > 1) {
@@ -219,10 +201,7 @@ int main() {
         cout << "You selected different genres.\n";
         cout << "Here are your recommendations:\n\n";
 
-        if (sciFiCount == 1) {
-            cout << "Sci-Fi  : " << sciFiMovies[0] << endl;
-        }
-
+    
         if (horrorCount == 1) {
             cout << "Horror  : " << horrorMovies[0] << endl;
         }
@@ -245,12 +224,9 @@ int main() {
 
         cout << "Your preferred genre is: ";
 
-        if (sciFiCount == highestCount) {
-            cout << "Sci-Fi" << endl;
-            cout << "We recommend: "
-                 << sciFiMovies[0] << endl;
-        }
-        else if (horrorCount == highestCount) {
+
+        
+         if (horrorCount == highestCount) {
             cout << "Horror" << endl;
             cout << "We recommend: "
                  << horrorMovies[0] << endl;
